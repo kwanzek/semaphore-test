@@ -14,10 +14,14 @@ RUN apt-get update --quiet=2 \
 RUN curl -sL https://deb.nodesource.com/setup_12.x
 RUN apt install nodejs --yes
 
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && sudo apt-get install yarn
+
 
 FROM base as node
 
 ADD . $APP_DIR
 
-RUN npm install
+RUN yarn install
 
