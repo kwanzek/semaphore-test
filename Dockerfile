@@ -1,6 +1,4 @@
-
-
-FROM ubuntu 18.04 as base
+FROM ubuntu:18.04 as base
 
 ENV APP_DIR=/srv/app
 WORKDIR $APP_DIR
