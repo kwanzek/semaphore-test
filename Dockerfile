@@ -8,8 +8,7 @@ WORKDIR $APP_DIR
 USER root
 
 RUN apt-get update --quiet=2 \
-  && apt-get install --yes --no-install-recommends git ssh python-pip python-setuptools apt-transport-https wget curl zip gcc g++ make \
-  && apt-get clean --yes
+  && apt-get install --yes --no-install-recommends git ssh python-pip python-setuptools apt-transport-https wget curl zip gcc g++ make docker
 
 RUN apt-get update
 RUN apt-get -y install curl gnupg
